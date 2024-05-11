@@ -12,11 +12,17 @@ class ObjectCountingFolder(Dataset):
     """Implements a PyTorch dataset class that accepts a path (data_path) that points to a directory following this structure:
 
         data_path:
+
         ├── images/
+
         │   ├── name_1.png
+
         │   └── ...
+
         ├── labels/
+
         │   ├── name_1.txt
+        
         │   └── ...
 
         Where name_1.txt correspond to name_1.png and is a text file where each line contains a single head point in the format 'x{sep}y'.
@@ -24,7 +30,7 @@ class ObjectCountingFolder(Dataset):
         Args:
             data_path (str): The path to the dataset.
             transforms (callable, optional): Transformation to be applied to both the target and the image.
-            sep: the string used to seperate x and y in the label files. defult to " ".
+            sep (str): the string used to seperate x and y in the label files. defult to " ".
             
         .note:
         When passing transforms, use the ones provided in the dataset.transforms module as they preserve the labels of the dataset. 
